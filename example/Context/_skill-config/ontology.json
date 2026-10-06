@@ -1,0 +1,19 @@
+{
+  "_comment": "Controlled vocabulary for search_terms. Classes: product-feature, channel, integration. Clients live in client-directory.json, metrics in Metrics/, problems in problem_tag.",
+  "version": "2026-09-01",
+  "entities": [
+    {"id": "web-chat", "canonical": "Web chat", "class": "channel", "aliases": ["webchat", "chat widget"], "gl_ref": null},
+    {"id": "whatsapp-business-api", "canonical": "WhatsApp Business API", "class": "channel", "aliases": ["WhatsApp", "WABA", "WhatsApp Cloud API"], "gl_ref": null},
+    {"id": "email", "canonical": "Email", "class": "channel", "aliases": ["email channel"], "gl_ref": null},
+    {"id": "inbox", "canonical": "Inbox", "class": "product-feature", "aliases": ["shared inbox"], "gl_ref": null},
+    {"id": "routing-rules", "canonical": "Routing rules", "class": "product-feature", "aliases": ["routing"], "gl_ref": null},
+    {"id": "human-handoff", "canonical": "Human handoff", "class": "product-feature", "aliases": ["handoff", "escalation"], "gl_ref": null},
+    {"id": "ai-reply-drafts", "canonical": "AI reply drafts", "class": "product-feature", "aliases": ["AI drafts"], "gl_ref": null},
+    {"id": "message-templates", "canonical": "Message templates", "class": "product-feature", "aliases": ["WhatsApp templates", "HSM"], "gl_ref": null},
+    {"id": "conversation-quota", "canonical": "Conversation quota", "class": "product-feature", "aliases": ["quota"], "gl_ref": "[[GL-conversation]]"},
+    {"id": "pricing", "canonical": "Pricing", "class": "product-feature", "aliases": [], "gl_ref": null},
+    {"id": "webhooks", "canonical": "Webhooks", "class": "product-feature", "aliases": ["outbound webhooks"], "gl_ref": null},
+    {"id": "salesforce", "canonical": "Salesforce", "class": "integration", "aliases": ["SFDC"], "gl_ref": null},
+    {"id": "zendesk", "canonical": "Zendesk", "class": "integration", "aliases": [], "gl_ref": null}
+  ]
+}

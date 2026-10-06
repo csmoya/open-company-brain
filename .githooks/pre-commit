@@ -1,0 +1,8 @@
+#!/bin/sh
+# Bloquea el commit si algo de la denylist privada (~/.config/open-company-brain/denylist.txt)
+# o un patron generico aparece en lo que vas a commitear. Activar una vez por clon:
+#   git config core.hooksPath .githooks
+python3 tools/leak_check.py --staged || {
+  echo "pre-commit: posible fuga. Revisa los hallazgos, o anade el falso positivo a .leakignore." >&2
+  exit 1
+}

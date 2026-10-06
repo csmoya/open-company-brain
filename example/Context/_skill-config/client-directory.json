@@ -1,0 +1,12 @@
+{
+  "_comment": "Fictional customers of Kestrel, a fictional company. client_id <-> real name. Not secret: notes and reports cite the name.",
+  "clients": [
+    {"client_id": "cid-0001", "name": "Acme Build", "active": true, "added_on": "2026-03-10"},
+    {"client_id": "cid-0002", "name": "Beta Corp", "active": true, "added_on": "2025-01-15"},
+    {"client_id": "cid-0003", "name": "Gamma Labs", "active": true, "added_on": "2025-11-03"},
+    {"client_id": "cid-0004", "name": "Northwind Retail", "active": true, "added_on": "2024-06-01"},
+    {"client_id": "cid-0005", "name": "Umbrella Health", "active": true, "added_on": "2025-09-22"},
+    {"client_id": "cid-0006", "name": "Initech", "active": true, "added_on": "2026-02-01"},
+    {"client_id": "cid-0007", "name": "Hooli Labs", "active": true, "added_on": "2025-04-18"}
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "_comment": "Human decisions about entity class. cb.py entities respects these on regeneration.",
+  "entities": {
+    "cid-0007": {"class": "partner", "decided_by": "Lena Fischer", "decided_on": "2026-08-30",
+                 "why": "Hooli Labs resells Kestrel to its own end customers; it is a channel partner, not an end customer."}
+  }
+}

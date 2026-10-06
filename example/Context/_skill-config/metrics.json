@@ -1,0 +1,139 @@
+{
+  "_comment": "The gate contract for Kestrel's canon. cb.py gates reads this file; no threshold lives in the skill or the code. Every gate carries its reason and its baseline. Rule of entry: if a number cannot turn red, it does not belong in `metrics`; put it in `tira` (the strip) instead. numerador/denominador are dotted paths into `cb.py stats --json`.",
+  "schema": "company-brain/metrics/1",
+  "baseline_on": "2026-09-15",
+  "metrics": [
+    {
+      "id": "validacion.ciclo_de_vida",
+      "que_mide": "Share of lifecycle notes (canon + tech) that a person has validated",
+      "numerador": "validacion.validated_true",
+      "denominador": "validacion.denominador",
+      "unidad": "fraccion",
+      "direccion": "mas_es_mejor",
+      "gate": 0.5,
+      "aviso": 0.7,
+      "por_que": "Below half, retrieve serves more unverified notes than verified ones, and people stop trusting the badge. 0.5 is where Maya stopped reading the validated label during the September review.",
+      "baseline": {"valor": 0.45, "fecha": "2026-09-15"}
+    },
+    {
+      "id": "caducidad.expiradas",
+      "que_mide": "Lifecycle notes past expires_on that nobody revalidated",
+      "numerador": "ciclo_de_vida.expiradas",
+      "unidad": "notas",
+      "direccion": "menos_es_mejor",
+      "gate": 3,
+      "aviso": 1,
+      "por_que": "validate drains about 3 notes a week. More than 3 expired means the queue is losing, not that the canon is old. One is normal churn.",
+      "baseline": {"valor": 1, "fecha": "2026-09-15"}
+    },
+    {
+      "id": "temporal.recuperadas",
+      "que_mide": "Notes whose source has a dated entry in extraction-log that actually carry occurred_on",
+      "numerador": "temporal.recuperadas",
+      "denominador": "temporal.recuperables",
+      "unidad": "fraccion",
+      "direccion": "mas_es_mejor",
+      "gate": 0.8,
+      "aviso": 0.95,
+      "por_que": "Only recoverable notes are measured: a hand-captured note with no dated source cannot have occurred_on, and gating it would be noise. If the date is sitting in the log and the note lacks it, that is a one-command fix (cb.py dates --write), so anything below 95 % is laziness, below 80 % is broken extraction.",
+      "baseline": {"valor": 1.0, "fecha": "2026-09-15"}
+    },
+    {
+      "id": "contrato.sin_contrato",
+      "que_mide": "Markdown files inside Context/ with no contract type",
+      "numerador": "sin_contrato.n",
+      "unidad": "ficheros",
+      "direccion": "menos_es_mejor",
+      "gate": 0,
+      "aviso": null,
+      "por_que": "A file in Context/ without a type shows up in every grep as if it were canon, with no owner, no expiry and no validation. Zero tolerance: give it frontmatter or move it out.",
+      "baseline": {"valor": 0, "fecha": "2026-09-15"}
+    },
+    {
+      "id": "apuestas.vencidas_sin_cerrar",
+      "que_mide": "Open bets whose deadline has passed",
+      "numerador": "apuestas.vencidas_sin_cerrar",
+      "unidad": "apuestas",
+      "direccion": "menos_es_mejor",
+      "gate": 3,
+      "aviso": 0,
+      "por_que": "A bet nobody closes is a prediction that risks nothing. One overdue bet is a busy week; three means the mechanism is decorative.",
+      "baseline": {"valor": 0, "fecha": "2026-09-15"}
+    },
+    {
+      "id": "grafo.con_provenance",
+      "que_mide": "Human graph edges that say who declared them and how",
+      "numerador": "grafo.con_provenance",
+      "denominador": "grafo.aristas",
+      "unidad": "fraccion",
+      "direccion": "mas_es_mejor",
+      "gate": 1.0,
+      "aviso": null,
+      "por_que": "An edge without declared_via cannot be told apart from an invented one, and gets served with the same authority. There is no acceptable share of unattributed edges.",
+      "baseline": {"valor": 1.0, "fecha": "2026-09-15"}
+    },
+    {
+      "id": "log.con_notas_usadas",
+      "que_mide": "Retrieval-log entries that record which notes were actually used",
+      "numerador": "log_de_retrieval.con_notas_usadas",
+      "denominador": "log_de_retrieval.entradas",
+      "unidad": "fraccion",
+      "direccion": "mas_es_mejor",
+      "gate": 0.5,
+      "aviso": 0.7,
+      "por_que": "notas_usadas is the only gold set this canon will ever have for measuring recall. An entry that returns nothing useful is legitimate (it should have a gap instead), so 100 % is not the target; under half means people stopped filling it in.",
+      "baseline": {"valor": 0.75, "fecha": "2026-09-15"}
+    },
+    {
+      "id": "log.con_session_id",
+      "que_mide": "Retrieval-log entries with a session_id",
+      "numerador": "log_de_retrieval.con_session_id",
+      "denominador": "log_de_retrieval.entradas",
+      "unidad": "fraccion",
+      "direccion": "mas_es_mejor",
+      "gate": 1.0,
+      "aviso": null,
+      "por_que": "Without session_id there is no leave-one-session-out, and any signal tuned on the log gets evaluated on itself.",
+      "baseline": {"valor": 1.0, "fecha": "2026-09-15"}
+    }
+  ],
+  "tira": [
+    {
+      "id": "conectividad.dos_o_mas",
+      "que_mide": "Lifecycle notes with 2+ search_terms that resolve against ontology.json",
+      "numerador": "conectividad_ontologia.2_o_mas",
+      "denominador": "temporal.denominador",
+      "unidad": "fraccion",
+      "por_que_sin_gate": "We do not know what good looks like yet; a gate invented today is a gate nobody audits."
+    },
+    {
+      "id": "temporal.desfase_mediana_dias",
+      "que_mide": "Median days between the event and its capture",
+      "numerador": "temporal.desfase_mediana_dias",
+      "unidad": "dias",
+      "por_que_sin_gate": "Exposure of the captured_on clock policy. Watched, not gated: the policy was chosen knowingly."
+    },
+    {
+      "id": "temporal.expuestas",
+      "que_mide": "Live notes whose event already fell outside its type's validity window",
+      "numerador": "temporal.expuestas",
+      "unidad": "notas",
+      "por_que_sin_gate": "Same as above: the visible cost of anchoring expiry on capture, not a defect."
+    },
+    {
+      "id": "supersesion.declarada",
+      "que_mide": "Decision-logs that declare what they supersede",
+      "numerador": "supersesion.con_supersedes",
+      "denominador": "supersesion.decision_logs",
+      "unidad": "fraccion",
+      "por_que_sin_gate": "Most decisions supersede nothing. The useful number is candidates left unjudged (cb.py supersession), which stats does not export yet."
+    },
+    {
+      "id": "caducidad.expiran_30d",
+      "que_mide": "Lifecycle notes expiring in the next 30 days",
+      "numerador": "ciclo_de_vida.expiran_30d",
+      "unidad": "notas",
+      "por_que_sin_gate": "Next month's validate workload. Planning input, not a health signal."
+    }
+  ]
+}

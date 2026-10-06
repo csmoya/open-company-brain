@@ -1,0 +1,22 @@
+{
+ "entities": [
+  {
+   "id": "whatsapp-business-api",
+   "canonical": "WhatsApp Business API",
+   "class": "channel",
+   "aliases": []
+  },
+  {
+   "id": "messenger",
+   "canonical": "Messenger",
+   "class": "channel",
+   "aliases": []
+  },
+  {
+   "id": "pricing",
+   "canonical": "Pricing",
+   "class": "product-feature",
+   "aliases": []
+  }
+ ]
+}

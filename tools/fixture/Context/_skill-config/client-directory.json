@@ -1,0 +1,41 @@
+{
+ "_comment": "fixture",
+ "clients": [
+  {
+   "client_id": "cid-0001",
+   "name": "Acme Build",
+   "active": true,
+   "added_on": "2026-01-01"
+  },
+  {
+   "client_id": "cid-0002",
+   "name": "Beta Corp",
+   "active": true,
+   "added_on": "2026-01-01"
+  },
+  {
+   "client_id": "cid-0003",
+   "name": "Gamma Labs",
+   "active": true,
+   "added_on": "2026-01-01"
+  },
+  {
+   "client_id": "cid-0004",
+   "name": "Delta (OMNI)",
+   "active": true,
+   "added_on": "2026-01-01"
+  },
+  {
+   "client_id": "cid-0005",
+   "name": "Epsilon (OMNI)",
+   "active": true,
+   "added_on": "2026-01-01"
+  },
+  {
+   "client_id": "cid-0006",
+   "name": "Nexo",
+   "active": true,
+   "added_on": "2026-01-01"
+  }
+ ]
+}

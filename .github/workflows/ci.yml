@@ -1,0 +1,25 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Tests (with fixture, stdlib only)
+        run: python3 tools/test_cb.py
+      - name: Example canon runs end to end
+        env:
+          CB_BASE: example
+        run: |
+          python3 tools/cb.py stats > /dev/null
+          python3 tools/cb.py grafo > /dev/null
+          python3 tools/cb.py gates
+      - name: Leak check (generic patterns; the private denylist runs in the pre-commit hook)
+        run: python3 tools/leak_check.py

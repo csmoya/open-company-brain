@@ -1,0 +1,175 @@
+{
+  "_comment": "Entidades resueltas del canon. Derivado y regenerable: `python3 tools/cb.py entities --write`. La fuente de verdad de un cliente sigue siendo client-directory.json; esto anade las variantes de escritura con las que aparece en el frontmatter y en los titulos, para que una consulta por cualquiera de ellas llegue a la misma ficha. No es taxonomia de carpetas (G12).",
+  "schema": "company-brain/entities/1",
+  "generated_on": "2026-10-06",
+  "firma": "aafb22f50cc4a389",
+  "counts": {
+    "entidades": 8,
+    "resueltas_a_client_id": 7,
+    "sin_resolver": 1
+  },
+  "entities": [
+    {
+      "id": "cid-0001",
+      "canonical": "Acme Build",
+      "class": "customer",
+      "client_id": "cid-0001",
+      "aliases": [
+        "acme build ltd",
+        "acmebuild"
+      ],
+      "aliases_vistos_en_titulos": [
+        "acmebuild"
+      ],
+      "canales_declarados": [
+        "Web chat",
+        "WhatsApp"
+      ],
+      "canales_mencionados": [],
+      "canales_ontologia": [
+        "Web chat",
+        "WhatsApp Business API"
+      ],
+      "aliases_ambiguos": [],
+      "class_via": "por defecto — nadie la ha decidido"
+    },
+    {
+      "id": "cid-0002",
+      "canonical": "Beta Corp",
+      "class": "customer",
+      "client_id": "cid-0002",
+      "aliases": [
+        "betacorp"
+      ],
+      "aliases_vistos_en_titulos": [
+        "betacorp"
+      ],
+      "canales_declarados": [
+        "Web chat"
+      ],
+      "canales_mencionados": [
+        "Web chat"
+      ],
+      "canales_ontologia": [
+        "Email",
+        "Web chat"
+      ],
+      "aliases_ambiguos": [],
+      "class_via": "por defecto — nadie la ha decidido"
+    },
+    {
+      "id": "cid-0003",
+      "canonical": "Gamma Labs",
+      "class": "customer",
+      "client_id": "cid-0003",
+      "aliases": [
+        "gammalabs"
+      ],
+      "aliases_vistos_en_titulos": [],
+      "canales_declarados": [
+        "Web chat"
+      ],
+      "canales_mencionados": [],
+      "canales_ontologia": [
+        "Web chat"
+      ],
+      "aliases_ambiguos": [],
+      "class_via": "por defecto — nadie la ha decidido"
+    },
+    {
+      "id": "cid-0007",
+      "canonical": "Hooli Labs",
+      "class": "partner",
+      "client_id": "cid-0007",
+      "aliases": [
+        "hoolilabs"
+      ],
+      "aliases_vistos_en_titulos": [],
+      "canales_declarados": [
+        "Web chat"
+      ],
+      "canales_mencionados": [],
+      "canales_ontologia": [
+        "Web chat"
+      ],
+      "aliases_ambiguos": [],
+      "class_via": "decidido a mano en entities-overrides.json"
+    },
+    {
+      "id": "cid-0006",
+      "canonical": "Initech",
+      "class": "customer",
+      "client_id": "cid-0006",
+      "aliases": [],
+      "aliases_vistos_en_titulos": [],
+      "canales_declarados": [
+        "Web chat"
+      ],
+      "canales_mencionados": [],
+      "canales_ontologia": [
+        "Web chat"
+      ],
+      "aliases_ambiguos": [],
+      "class_via": "por defecto — nadie la ha decidido"
+    },
+    {
+      "id": "cid-0004",
+      "canonical": "Northwind Retail",
+      "class": "customer",
+      "client_id": "cid-0004",
+      "aliases": [
+        "northwindretail"
+      ],
+      "aliases_vistos_en_titulos": [],
+      "canales_declarados": [
+        "Web chat",
+        "WhatsApp"
+      ],
+      "canales_mencionados": [],
+      "canales_ontologia": [
+        "Web chat",
+        "WhatsApp Business API"
+      ],
+      "aliases_ambiguos": [],
+      "class_via": "por defecto — nadie la ha decidido"
+    },
+    {
+      "id": "cid-0005",
+      "canonical": "Umbrella Health",
+      "class": "customer",
+      "client_id": "cid-0005",
+      "aliases": [
+        "umbrellahealth"
+      ],
+      "aliases_vistos_en_titulos": [
+        "umbrellahealth"
+      ],
+      "canales_declarados": [
+        "WhatsApp"
+      ],
+      "canales_mencionados": [],
+      "canales_ontologia": [
+        "WhatsApp Business API"
+      ],
+      "aliases_ambiguos": [],
+      "class_via": "por defecto — nadie la ha decidido"
+    },
+    {
+      "id": "unresolved-vandelay-industries",
+      "canonical": "Vandelay Industries",
+      "class": "customer",
+      "client_id": null,
+      "aliases": [
+        "vandelayindustries"
+      ],
+      "aliases_vistos_en_titulos": [
+        "vandelayindustries"
+      ],
+      "canales_declarados": [],
+      "canales_mencionados": [],
+      "canales_ontologia": [],
+      "aliases_ambiguos": [],
+      "class_via": "por defecto — nadie la ha decidido"
+    }
+  ]
+}
